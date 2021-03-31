@@ -32,7 +32,25 @@ namespace MyRentalShop.API
             services.AddInfrastructure(Configuration);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyRentalShop.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "MyRentalShop.API", 
+                    Version = "v1",
+                    Description = "Aplikacja do zarz¹dzania wypo¿yczalni¹",
+                    //TODO Zmieniæ na stronê w³aœciw¹ po utworzeniu 
+                    TermsOfService = new Uri("https://example.com/terms"), 
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Przemys³aw Wróbel",
+                        Email = string.Empty,
+                        Url = new Uri("https://example.com/terms")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        //TODO Zmieniæ na w³aœciw¹ licencjê
+                        Name = "Nazwa licencji",
+                        Url = new Uri("https://example.com/license")
+                    }
+                });
             });
 
         }
@@ -43,9 +61,12 @@ namespace MyRentalShop.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRentalShop.API v1"));
+                
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRentalShop.API v1"));
 
             app.UseHttpsRedirection();
 
