@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{09C67026-CC86-43D8-84E1-9A3E034D2020}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C426E484-E00B-4A04-B64D-EB00B7DABD41}"
-	ProjectSection(SolutionItems) = preProject
-		DependencyInjection.cs = DependencyInjection.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B6B0AF45-955B-40FA-A2DA-92F9A3DDACB0}"
 EndProject
