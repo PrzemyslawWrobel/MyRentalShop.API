@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using MyRentalShop.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -51,6 +52,8 @@ namespace MyRentalShop.API
                         Url = new Uri("https://example.com/license")
                     }
                 });
+                var filePath = Path.Combine(AppContext.BaseDirectory, "MyRentalShop.API.xml");
+                c.IncludeXmlComments(filePath);
             });
 
         }
