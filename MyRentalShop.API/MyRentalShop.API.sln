@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Domain", "MyRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Infrastructure", "MyRentalShop.Infrastructure\MyRentalShop.Infrastructure.csproj", "{77F920DE-E9C7-44FC-B4A5-777CC91961A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Persistance", "MyRentalShop.Persistance\MyRentalShop.Persistance.csproj", "{F9FC98C4-C921-4847-8614-9D253CA6ADD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{77F920DE-E9C7-44FC-B4A5-777CC91961A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77F920DE-E9C7-44FC-B4A5-777CC91961A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77F920DE-E9C7-44FC-B4A5-777CC91961A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FC98C4-C921-4847-8614-9D253CA6ADD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9FC98C4-C921-4847-8614-9D253CA6ADD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9FC98C4-C921-4847-8614-9D253CA6ADD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9FC98C4-C921-4847-8614-9D253CA6ADD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{27A3C0BB-4F32-4240-B52F-EB7E61FE8C9B} = {09C67026-CC86-43D8-84E1-9A3E034D2020}
 		{FA940968-D434-4D9E-86E1-9433A16CB7E4} = {09C67026-CC86-43D8-84E1-9A3E034D2020}
 		{77F920DE-E9C7-44FC-B4A5-777CC91961A9} = {C426E484-E00B-4A04-B64D-EB00B7DABD41}
+		{F9FC98C4-C921-4847-8614-9D253CA6ADD5} = {C426E484-E00B-4A04-B64D-EB00B7DABD41}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C90A7709-5054-4E7A-893D-CEA30BBA2F83}
