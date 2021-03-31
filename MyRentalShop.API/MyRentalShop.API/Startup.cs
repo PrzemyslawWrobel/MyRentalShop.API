@@ -28,6 +28,15 @@ namespace MyRentalShop.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+                options.AddPolicy(name: "MyAllowSpecificOrigins",
+                    builder =>
+                    {
+                        //TODO Uzupe³niæ port na jakim dzia³a serwer angulara
+                        builder.WithOrigins("https://localhost: port");
+                    }
+                )
+            );
 
             services.AddControllers();
             services.AddInfrastructure(Configuration);
@@ -74,6 +83,8 @@ namespace MyRentalShop.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
