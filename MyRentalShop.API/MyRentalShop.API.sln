@@ -11,19 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B6B0AF45-955B-40FA-A2DA-92F9A3DDACB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Application", "MyRentalShop.Application\MyRentalShop.Application.csproj", "{A4169325-A8DE-4B28-9941-E4951D5B547C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentalShop.Application", "MyRentalShop.Application\MyRentalShop.Application.csproj", "{A4169325-A8DE-4B28-9941-E4951D5B547C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Common", "MyRentalShop.Common\MyRentalShop.Common.csproj", "{27A3C0BB-4F32-4240-B52F-EB7E61FE8C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentalShop.Common", "MyRentalShop.Common\MyRentalShop.Common.csproj", "{27A3C0BB-4F32-4240-B52F-EB7E61FE8C9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Domain", "MyRentalShop.Domain\MyRentalShop.Domain.csproj", "{FA940968-D434-4D9E-86E1-9433A16CB7E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentalShop.Domain", "MyRentalShop.Domain\MyRentalShop.Domain.csproj", "{FA940968-D434-4D9E-86E1-9433A16CB7E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Infrastructure", "MyRentalShop.Infrastructure\MyRentalShop.Infrastructure.csproj", "{77F920DE-E9C7-44FC-B4A5-777CC91961A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentalShop.Infrastructure", "MyRentalShop.Infrastructure\MyRentalShop.Infrastructure.csproj", "{77F920DE-E9C7-44FC-B4A5-777CC91961A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentalShop.Persistance", "MyRentalShop.Persistance\MyRentalShop.Persistance.csproj", "{F9FC98C4-C921-4847-8614-9D253CA6ADD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentalShop.Persistance", "MyRentalShop.Persistance\MyRentalShop.Persistance.csproj", "{F9FC98C4-C921-4847-8614-9D253CA6ADD5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyRentalShop.API", "MyRentalShop.API", "{37070ADA-5E3B-4B8C-BF74-B39D1F6EBF08}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyRentalShop.SPA", "MyRentalShop.SPA", "{5732ABFD-1A88-470D-B1F7-422C30960239}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
