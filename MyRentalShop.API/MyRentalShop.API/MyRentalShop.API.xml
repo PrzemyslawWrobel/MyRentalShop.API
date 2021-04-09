@@ -15,6 +15,28 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:MyRentalShop.API.Controllers.HealthChecksController">
+            <summary>
+            Służy do spr czy api działa
+            </summary>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.HealthChecksController.GetAsync">
+            <summary>
+            Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MyRentalShop.API.Controllers.ItemController">
+            <summary>
+            Kontroler odp za obsługę produktów
+            </summary>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.ItemController.GetItemsAsync">
+            <summary>
+            Zwraca listę produktów
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:MyRentalShop.API.Controllers.WeatherForecastController.Get">
             <summary>
             Get weather forecast

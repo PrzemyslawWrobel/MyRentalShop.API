@@ -11,7 +11,7 @@ namespace MyRentalShop.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[EnableCors("MyAllowSpecificOrigins")]
+    [EnableCors("MyAllowAngularOrigins")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

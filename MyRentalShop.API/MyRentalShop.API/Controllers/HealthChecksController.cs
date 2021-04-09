@@ -14,7 +14,7 @@ namespace MyRentalShop.API.Controllers
     /// </summary>
     [Route("api/hc")]
     [ApiController]
-    //[EnableCors("MyAllowSpecificOrigins")]
+    [EnableCors("MyAllowAngularOrigins")]
     public class HealthChecksController : ControllerBase
     {
         /// <summary>

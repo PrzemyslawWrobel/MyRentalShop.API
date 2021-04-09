@@ -32,15 +32,15 @@ namespace MyRentalShop.API
         public void ConfigureServices(IServiceCollection services)
         {
             //Dodanie CORS na jakim adresie bêdzie dzia³a³ FRONT-END
-            //services.AddCors(options =>
-            //    options.AddPolicy(name: "MyAllowSpecificOrigins",
-            //        builder =>
-            //        {
-                        
-            //            builder.WithOrigins("https://localhost:4200");
-            //        }
-            //    )
-            //);
+            services.AddCors(options =>
+                options.AddPolicy(name: "MyAllowAngularOrigins",
+                    builder =>
+                    {
+
+                        builder.WithOrigins("https://localhost:4200");
+                    }
+                )
+            );
 
             services.AddControllers();
             services.AddInfrastructure(Configuration);

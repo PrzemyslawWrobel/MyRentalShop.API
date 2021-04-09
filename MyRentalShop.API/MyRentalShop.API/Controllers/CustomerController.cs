@@ -13,6 +13,8 @@ namespace MyRentalShop.API.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("MyAllowAngularOrigins")]
+
     public class CustomerController : ControllerBase
     {
         /// <summary>
