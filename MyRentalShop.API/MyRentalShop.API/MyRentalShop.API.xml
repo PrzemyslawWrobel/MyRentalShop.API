@@ -4,11 +4,35 @@
         <name>MyRentalShop.API</name>
     </assembly>
     <members>
+        <member name="T:MyRentalShop.API.Controllers.CustomerController">
+            <summary>
+            Kontroler odp za obsługę użytkowników
+            </summary>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.CustomerController.GetCustomersAsync">
+            <summary>
+            Zwraca listę użytkowników
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:MyRentalShop.API.Controllers.WeatherForecastController.Get">
             <summary>
             Get weather forecast
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:MyRentalShop.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MyRentalShop.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>
