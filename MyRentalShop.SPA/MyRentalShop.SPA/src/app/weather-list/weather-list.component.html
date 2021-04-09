@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            miejsce na baner reklamowy miejsce na baner reklamowy miejsce na baner reklamowy miejsce na baner reklamowy
+        </div>
+
+        <div class="col-lg-10 col-md-8 col-sm-6">
+            <div class="row">
+                <div *ngFor="let weather of weathers" class="col-lg-2 col-md-4 col-sm-6">
+                    <app-weather-card [weather]='weather'></app-weather-card>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

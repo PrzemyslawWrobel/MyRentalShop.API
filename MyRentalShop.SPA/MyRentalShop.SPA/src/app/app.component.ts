@@ -8,15 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'MyRentalShop-SPA';
-  Weather = {
-    
-  }
 
-  baseUrl = 'https://localhost:44311/WeatherForecast';
-  constructor(private http: HttpClient) { }
-
-  getUsers(): Observable<Weather[]> {
-    return this.http.get<Weather[]>(this.baseUrl );
-  }
 
 }
