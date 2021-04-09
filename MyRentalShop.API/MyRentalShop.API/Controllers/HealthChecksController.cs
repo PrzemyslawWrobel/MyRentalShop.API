@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.API.Controllers
 {
+    /// <summary>
+    /// Służy do spr czy api działa
+    /// </summary>
     [Route("api/hc")]
     [ApiController]
     //[EnableCors("MyAllowSpecificOrigins")]
     public class HealthChecksController : ControllerBase
     {
+        /// <summary>
+        /// Test
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
