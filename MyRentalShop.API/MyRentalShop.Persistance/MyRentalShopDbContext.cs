@@ -9,5 +9,9 @@ namespace MyRentalShop.Persistance
 {
     public class MyRentalShopDbContext : DbContext
     {
+        public MyRentalShopDbContext(DbContextOptions<MyRentalShopDbContext> options) : base(options)
+        {
+
+        }
     }
 }
