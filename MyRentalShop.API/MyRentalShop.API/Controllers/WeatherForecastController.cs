@@ -32,7 +32,7 @@ namespace MyRentalShop.API.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+       // [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
