@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Domain.Entities
 {
-    class CustomerType
+    /// <summary>
+    /// Klasa służy do określania jakiego typu jest użytkownik
+    /// Dostawca, Odbiorca
+    /// </summary>
+    public class CustomerType
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
