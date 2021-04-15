@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Domain.Entities
 {
-    class ItemTag
+    /// <summary>
+    /// Klasa dodająca tagi po których możemy wyszukiwać produkty
+    /// Jeden produkt może mieć wiele tagów
+    /// </summary>
+    public class ItemTag
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

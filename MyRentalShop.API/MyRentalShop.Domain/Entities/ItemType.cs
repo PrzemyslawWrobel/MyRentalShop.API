@@ -13,5 +13,8 @@ namespace MyRentalShop.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        
+        //Służy do stworzenia relacji 1 ItemType do wielu Itemów 
+        public ICollection<Item> Items { get; set; }
     }
 }

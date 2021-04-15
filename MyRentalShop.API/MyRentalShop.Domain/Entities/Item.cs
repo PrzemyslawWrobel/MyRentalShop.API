@@ -29,14 +29,20 @@ namespace MyRentalShop.Domain.Entities
         public int InventoryNumber { get; set; }
 
         /// <summary>
-        /// jakiego typu jest produkt
-        /// </summary>
-        public int TypeId { get; set; }
-
-        /// <summary>
         /// Minimalny wiek wypożyczającego, sprzęt narzędzia
         /// </summary>
         public int MinAgeBorrower { get; set; }
 
+
+        // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
+
+        /// <summary>
+        /// int? ItemTypeId - mówi o tym, że jest to property nie obowiązkowe
+        /// </summar>
+        public int? ItemTypeId { get; set; }
+        /// <summary>
+        /// Służy do stworzenia relacji
+        /// </summary>
+        public ItemType ItemType { get; set; }
     }
 }
