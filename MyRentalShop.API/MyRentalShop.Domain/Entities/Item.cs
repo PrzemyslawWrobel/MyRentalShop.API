@@ -33,7 +33,7 @@ namespace MyRentalShop.Domain.Entities
         /// </summary>
         public int MinAgeBorrower { get; set; }
 
-
+        #region Relacje
         // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
 
         /// <summary>
@@ -44,5 +44,6 @@ namespace MyRentalShop.Domain.Entities
         /// Służy do stworzenia relacji
         /// </summary>
         public ItemType ItemType { get; set; }
+        #endregion
     }
 }

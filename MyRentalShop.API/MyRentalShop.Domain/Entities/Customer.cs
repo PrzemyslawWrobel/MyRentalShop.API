@@ -45,11 +45,22 @@ namespace MyRentalShop.Domain.Entities
         /// </summary>
         public bool IsActiv { get; set; }
 
-        //RELACJE
+        #region Relacje
         /// <summary>
         /// Relacja 1:1 
         /// </summary>
         public CustomerContactPerson CustomerContactPerson { get; set; }
+    
+        // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
 
+        /// <summary>
+        /// int? ItemTypeId - mówi o tym, że jest to property nie obowiązkowe
+        /// </summar>
+        public int? CustomerTypeId { get; set; }
+        /// <summary>
+        /// Służy do stworzenia relacji
+        /// </summary>
+        public CustomerType CustomerType { get; set; }
+        #endregion
     }
 }

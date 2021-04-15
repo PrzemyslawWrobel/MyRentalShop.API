@@ -14,5 +14,9 @@ namespace MyRentalShop.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        #region Relacje
+        public ICollection<Customer> Customers { get; set; }
+        #endregion
     }
 }
