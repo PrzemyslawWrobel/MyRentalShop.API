@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Domain.Entities
 {
-    class ItemType
+    /// <summary>
+    /// Klasa służy do określania jakiego typu jest produkt
+    /// </summary>
+    public class ItemType
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
