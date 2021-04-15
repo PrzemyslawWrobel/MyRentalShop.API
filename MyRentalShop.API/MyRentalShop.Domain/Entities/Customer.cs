@@ -45,5 +45,11 @@ namespace MyRentalShop.Domain.Entities
         /// </summary>
         public bool IsActiv { get; set; }
 
+        //RELACJE
+        /// <summary>
+        /// Relacja 1:1 
+        /// </summary>
+        public CustomerContactPerson CustomerContactPerson { get; set; }
+
     }
 }
