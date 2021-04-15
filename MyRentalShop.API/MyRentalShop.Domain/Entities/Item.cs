@@ -44,6 +44,11 @@ namespace MyRentalShop.Domain.Entities
         /// Służy do stworzenia relacji
         /// </summary>
         public ItemType ItemType { get; set; }
+        
+        /// <summary>
+        ///Służy do stowrzenia relacji N:N między Item a ItemTag 
+        /// </summary>
+        public ICollection<ItemTag> ItemTags { get; set; }
         #endregion
     }
 }
