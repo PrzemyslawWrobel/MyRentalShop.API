@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyRentalShop.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,11 @@ namespace MyRentalShop.Domain.Entities
         /// Pozycja jaką zajmuje użytkownik w firmie
         /// </summary>
         public string Position { get; set; }
+        
+        /// <summary>
+        /// Dane osoby do kontaktów
+        /// </summary>
+        public PersonName ContactPersonName { get; set; }
 
         //Relacje
 
