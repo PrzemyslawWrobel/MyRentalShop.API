@@ -8,6 +8,12 @@ namespace MyRentalShop.Domain.Entities
 {
     public class Item
     {
+        public Item()
+        {
+            //inicjalizacja listy ItemTags
+            ItemTags = new List<ItemTag>();
+        }
+            
         /// <summary>
         /// Id produktu autoinkrementacja na bazie
         /// </summary>
@@ -48,7 +54,7 @@ namespace MyRentalShop.Domain.Entities
         /// <summary>
         ///Służy do stowrzenia relacji N:N między Item a ItemTag 
         /// </summary>
-        public ICollection<ItemTag> ItemTags { get; set; }
+        public List<ItemTag> ItemTags { get; set; }
         #endregion
     }
 }
