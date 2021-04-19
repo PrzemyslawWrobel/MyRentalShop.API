@@ -14,5 +14,10 @@ namespace MyRentalShop.Domain.Common
         public DataType Created { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime? Modified { get; set; }
+        public int StatusId { get; set; }
+        public string InactivatedBy { get; set; }
+        public DateTime? Inactivaated { get; set; }
+
+
     }
 }
