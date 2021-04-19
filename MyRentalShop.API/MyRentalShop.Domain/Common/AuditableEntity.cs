@@ -11,7 +11,7 @@ namespace MyRentalShop.Domain.Common
     {
         public int Id { get; set; }
         public string CreatedBy { get; set; }
-        public DataType Created { get; set; }
+        public DateTime Created { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime? Modified { get; set; }
 
@@ -20,7 +20,7 @@ namespace MyRentalShop.Domain.Common
         /// </summary>
         public int StatusId { get; set; }
         public string InactivatedBy { get; set; }
-        public DateTime? Inactivaated { get; set; }
+        public DateTime? Inactivated { get; set; }
 
 
     }
