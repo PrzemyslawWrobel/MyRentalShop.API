@@ -12,11 +12,17 @@ namespace MyRentalShop.Domain.Entities
     /// </summary>
     public class ItemTag
     {
+
+        public ItemTag()
+        {
+            //inicjalizacja listy Items
+            Items = new List<Item>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
 
         #region Relacje
-        public ICollection<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
         #endregion
     }
 }
