@@ -11,10 +11,15 @@ namespace MyRentalShop.Domain.Entities
     /// </summary>
     public class ItemType
     {
+        public ItemType()
+        {
+            //inicjalizacja listy Items
+            Items = new List<Item>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         
         //Służy do stworzenia relacji 1 ItemType do wielu Itemów 
-        public ICollection<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
     }
 }
