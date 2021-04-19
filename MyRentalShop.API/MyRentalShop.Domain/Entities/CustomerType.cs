@@ -12,11 +12,17 @@ namespace MyRentalShop.Domain.Entities
     /// </summary>
     public class CustomerType
     {
+        public CustomerType()
+        {
+            //inicjalizacja listy Customers
+
+            Customers = new List<Customer>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
 
         #region Relacje
-        public ICollection<Customer> Customers { get; set; }
+        public List<Customer> Customers { get; set; } //= new List<Customer>(); - inicjalizacja listy nowszy sposób 
         #endregion
     }
 }
