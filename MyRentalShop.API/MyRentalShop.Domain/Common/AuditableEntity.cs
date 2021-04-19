@@ -14,6 +14,10 @@ namespace MyRentalShop.Domain.Common
         public DataType Created { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime? Modified { get; set; }
+
+        /// <summary>
+        /// poniższe property służą do dezaktywacji danych/użytkowników a nie usuwanie fizyczne z bazy
+        /// </summary>
         public int StatusId { get; set; }
         public string InactivatedBy { get; set; }
         public DateTime? Inactivaated { get; set; }
