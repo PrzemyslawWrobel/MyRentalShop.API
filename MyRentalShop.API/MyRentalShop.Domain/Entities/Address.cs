@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyRentalShop.Domain.ValueObjects
+namespace MyRentalShop.Domain.Entities
 {
     public class Address
     {
@@ -44,5 +44,12 @@ namespace MyRentalShop.Domain.ValueObjects
         /// Nazwa Kraju
         /// </summary>
         public string Country { get; set; }
+
+        //Relacja 1 Customer może mieć wiele adresów. int? oznacza że adres nie jest wymagany
+        public int? CustomerId { get; set; }
+        //Relacja do Customera 
+        public Customer Customer { get; set; }
+
+
     }
 }

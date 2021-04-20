@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Domain.Entities
 {
-    public class CustomerContactPerson
+    public class ContactPerson
     {
         public int Id { get; set; }
 

@@ -49,7 +49,7 @@ namespace MyRentalShop.Domain.Entities
         /// <summary>
         /// Relacja 1:1 
         /// </summary>
-        public CustomerContactPerson CustomerContactPerson { get; set; }
+        public ContactPerson CustomerContactPerson { get; set; }
     
         // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
 
@@ -61,6 +61,9 @@ namespace MyRentalShop.Domain.Entities
         /// Służy do stworzenia relacji
         /// </summary>
         public CustomerType CustomerType { get; set; }
+
+        // Relacja 1 : N relacja jeden Customer wiele adresów
+        public ICollection<Address> Addresses { get; set; }
         #endregion
     }
 }
