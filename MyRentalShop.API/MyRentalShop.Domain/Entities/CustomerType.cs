@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyRentalShop.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace MyRentalShop.Domain.Entities
     /// Klasa służy do określania jakiego typu jest użytkownik
     /// Dostawca, Odbiorca
     /// </summary>
-    public class CustomerType
+    public class CustomerType : AuditableEntity
     {
         public CustomerType()
         {

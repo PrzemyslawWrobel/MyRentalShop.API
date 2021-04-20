@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyRentalShop.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace MyRentalShop.Domain.Entities
     /// <summary>
     /// Klasa służy do określania jakiego typu jest produkt
     /// </summary>
-    public class ItemType
+    public class ItemType : AuditableEntity
     {
         public ItemType()
         {

@@ -1,4 +1,5 @@
-﻿using MyRentalShop.Domain.ValueObjects;
+﻿using MyRentalShop.Domain.Common;
+using MyRentalShop.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Domain.Entities
 {
-    public class ContactPerson
+    public class ContactPerson : AuditableEntity
     {
         public int Id { get; set; }
 
