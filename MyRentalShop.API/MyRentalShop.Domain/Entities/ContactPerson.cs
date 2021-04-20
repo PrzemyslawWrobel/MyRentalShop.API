@@ -19,7 +19,7 @@ namespace MyRentalShop.Domain.Entities
         /// <summary>
         /// Dane osoby do kontaktów
         /// </summary>
-        public PersonName ContactPersonName { get; set; }
+        public PersonName PersonName { get; set; }
 
         //Relacje
 

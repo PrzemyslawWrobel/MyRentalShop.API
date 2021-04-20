@@ -26,12 +26,11 @@ namespace MyRentalShop.Persistance
         public DbSet<ItemType> ItemTypes { get; set; }
 
 
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<ContactPerson>().OwnsOne(p => p.PersonName);
         }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
