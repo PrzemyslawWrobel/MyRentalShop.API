@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MyRentalShop.Persistance.Seed;
 
 namespace MyRentalShop.Persistance
 {
@@ -29,6 +30,7 @@ namespace MyRentalShop.Persistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ContactPerson>().OwnsOne(p => p.PersonName);
+            modelBuilder.SeedData();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

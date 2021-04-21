@@ -29,7 +29,7 @@ namespace MyRentalShop.Domain.Entities
         /// <summary>
         /// Numer mieszkania
         /// </summary>
-        public int FlatNumber { get; set; }
+        public string FlatNumber { get; set; }
 
         /// <summary>
         /// Kod pocztowy
