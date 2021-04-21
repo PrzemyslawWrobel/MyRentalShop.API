@@ -26,7 +26,10 @@ namespace MyRentalShop.Persistance.Seed
                     IsActiv = true,
 
                 });
-                d.OwnsOne(d => d.CustomerContactPerson).HasData(new { CustomerID = 1, FirstName = "Jaś", SecondName = String.Empty, LastName = "Fasola" });
+                d.HasData(new ContactPerson() { Id = 1, CustomerId = 1, Position = "Sekretarka",
+                });
+                d.OwnsOne(d => d.CustomerContactPerson).HasData(new { Id = 1, CustomerID = 1, FirstName = "Jaś", SecondName = String.Empty, LastName = "Fasola" });
+
                 d.HasData(new CustomerType()
                 {
                     Id = 1,
