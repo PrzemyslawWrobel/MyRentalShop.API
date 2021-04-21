@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRentalShop.Persistance;
 
 namespace MyRentalShop.Persistance.Migrations
 {
     [DbContext(typeof(MyRentalShopDbContext))]
-    partial class MyRentalShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210420195811_AuditableEntity")]
+    partial class AuditableEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
