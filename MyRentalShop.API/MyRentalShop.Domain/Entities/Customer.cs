@@ -9,6 +9,10 @@ namespace MyRentalShop.Domain.Entities
 {
     public class Customer : AuditableEntity
     {
+        public Customer()
+        {
+            Addresses = new List< Address>();
+        }
         public int Id { get; set; }
 
         /// <summary>

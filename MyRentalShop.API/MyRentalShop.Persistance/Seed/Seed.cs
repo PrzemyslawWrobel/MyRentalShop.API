@@ -17,6 +17,8 @@ namespace MyRentalShop.Persistance.Seed
                 d.HasData(new Customer()
                 {
                     Id = 1,
+                    CustomerTypeId = 1,
+                    
                     Name = "Comarch",
                     RegistrationDate = DateTime.Now,
                     AgeCustomer = 21,
@@ -26,18 +28,16 @@ namespace MyRentalShop.Persistance.Seed
                     IsActiv = true,
 
                 });
-                d.HasData(new ContactPerson() { Id = 1, CustomerId = 1, Position = "Sekretarka",
+                d.HasData(new ContactPerson() { Id = 1,  CustomerId = 1, Position = "Sekretarka",
                 });
-                d.OwnsOne(d => d.CustomerContactPerson).HasData(new { Id = 1, CustomerID = 1, FirstName = "Jaś", SecondName = String.Empty, LastName = "Fasola" });
+                //d.OwnsOne(d => d.CustomerContactPerson).HasData(new { Id = 1, CustomerID = 1, FirstName = "Jaś", SecondName = String.Empty, LastName = "Fasola" });
 
-                d.HasData(new CustomerType()
-                {
-                    Id = 1,
-                    Name = "Firma",
-                });
-                d.HasData(new Address() { Id = 1, AddressType = "Firmowy", Street = "Jana Pawła II", BuildingNumber = "179", FlatNumber = "2B", ZipCode = "43-300", City = "Kraków", Country = "Poland" });
+                d.HasData(new CustomerType(){Id = 1, Name = "Firma"});
+                d.HasData(new Address() { Id = 1, CustomerId = 1, AddressType = "Firmowy", Street = "Jana Pawła II", BuildingNumber = "179", FlatNumber = "2B", ZipCode = "43-300", City = "Kraków", Country = "Poland" });
 
             });
+            modelBuilder.Entity<ContactPerson>(c => c.OwnsOne(c =>c.PersonName).HasData(new {Id = 1, CustomerID = 1, FirstName = "Jaś", SecondName = String.Empty, LastName = "Fasola" }));
+
         }
     }
 }
