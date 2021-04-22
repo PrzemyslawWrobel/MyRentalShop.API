@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRentalShop.Persistance;
 
 namespace MyRentalShop.Persistance.Migrations
 {
     [DbContext(typeof(MyRentalShopDbContext))]
-    partial class MyRentalShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210422114131_AuditableRemoveId")]
+    partial class AuditableRemoveId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,36 +93,6 @@ namespace MyRentalShop.Persistance.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Addresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddressType = "Firmowy",
-                            BuildingNumber = "179",
-                            City = "Kraków",
-                            Country = "Poland",
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerId = 1,
-                            FlatNumber = "2B",
-                            StatusId = 0,
-                            Street = "Jana Pawła II",
-                            ZipCode = "43-300"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AddressType = "Firmowy",
-                            BuildingNumber = "179",
-                            City = "Bielsko-Biała",
-                            Country = "Poland",
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerId = 2,
-                            FlatNumber = "6B",
-                            StatusId = 0,
-                            Street = "Piekarska II",
-                            ZipCode = "43-300"
-                        });
                 });
 
             modelBuilder.Entity("MyRentalShop.Domain.Entities.ContactPerson", b =>
@@ -163,24 +135,6 @@ namespace MyRentalShop.Persistance.Migrations
                         .IsUnique();
 
                     b.ToTable("ContactPersons");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerId = 1,
-                            Position = "Sekretarka",
-                            StatusId = 0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerId = 2,
-                            Position = "Sekretarka",
-                            StatusId = 0
-                        });
                 });
 
             modelBuilder.Entity("MyRentalShop.Domain.Entities.Customer", b =>
@@ -240,36 +194,6 @@ namespace MyRentalShop.Persistance.Migrations
                     b.HasIndex("CustomerTypeId");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AgeCustomer = 21,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerStatusId = 1,
-                            CustomerTypeId = 1,
-                            IsActiv = true,
-                            NIP = "6591786532",
-                            Name = "Comarch",
-                            REGON = "",
-                            RegistrationDate = new DateTime(2021, 4, 22, 12, 42, 23, 964, DateTimeKind.Local).AddTicks(9150),
-                            StatusId = 0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AgeCustomer = 21,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerStatusId = 1,
-                            CustomerTypeId = 2,
-                            IsActiv = true,
-                            NIP = "6591786534",
-                            Name = "Jantar",
-                            REGON = "",
-                            RegistrationDate = new DateTime(2021, 4, 22, 12, 42, 23, 966, DateTimeKind.Local).AddTicks(6864),
-                            StatusId = 0
-                        });
                 });
 
             modelBuilder.Entity("MyRentalShop.Domain.Entities.CustomerType", b =>
@@ -306,22 +230,6 @@ namespace MyRentalShop.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CustomerTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Firma",
-                            StatusId = 0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Firma",
-                            StatusId = 0
-                        });
                 });
 
             modelBuilder.Entity("MyRentalShop.Domain.Entities.Item", b =>
@@ -500,22 +408,6 @@ namespace MyRentalShop.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("ContactPersonId");
-
-                            b1.HasData(
-                                new
-                                {
-                                    ContactPersonId = 1,
-                                    FirstName = "Jaś",
-                                    LastName = "Fasola",
-                                    SecondName = ""
-                                },
-                                new
-                                {
-                                    ContactPersonId = 2,
-                                    FirstName = "Kaczor",
-                                    LastName = "Donald",
-                                    SecondName = ""
-                                });
                         });
 
                     b.Navigation("Customer");
