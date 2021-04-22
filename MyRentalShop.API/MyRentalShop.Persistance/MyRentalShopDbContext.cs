@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using MyRentalShop.Persistance.Seed;
+using System.Reflection;
 
 namespace MyRentalShop.Persistance
 {
@@ -29,6 +30,8 @@ namespace MyRentalShop.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // configuration loaded from folder configuration  
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.SeedData();
         }
 
