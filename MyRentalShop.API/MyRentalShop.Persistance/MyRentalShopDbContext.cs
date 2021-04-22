@@ -29,7 +29,6 @@ namespace MyRentalShop.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ContactPerson>().OwnsOne(p => p.PersonName);
             modelBuilder.SeedData();
         }
 
