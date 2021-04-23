@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Infrastructure.Services
 {
-    public class DataTimeService : IDateTime
+    public class DateTimeService : IDateTime
     {
         public DateTime Now => DateTime.Now;
     }
