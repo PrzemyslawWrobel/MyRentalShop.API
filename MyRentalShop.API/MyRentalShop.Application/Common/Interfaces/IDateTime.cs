@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Application.Common.Interfaces
 {
-    public interface IDataTime
+    public interface IDateTime
     {
         public DateTime Now { get; }
     }
