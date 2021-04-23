@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyRentalShop.Application\MyRentalShop.Application.csproj" />
     <ProjectReference Include="..\MyRentalShop.Domain\MyRentalShop.Domain.csproj" />
+    <ProjectReference Include="..\MyRentalShop.Infrastructure\MyRentalShop.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

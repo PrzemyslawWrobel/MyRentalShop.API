@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using MyRentalShop.Domain.Common;
+using MyRentalShop.Application.Common.Interfaces;
 using MyRentalShop.Domain.Entities;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace MyRentalShop.Persistance
 {
     public class MyRentalShopDbContext : DbContext
     {
-        public MyRentalShopDbContext(DbContextOptions<MyRentalShopDbContext> options) : base(options)
+        private 
+        public MyRentalShopDbContext(DbContextOptions<MyRentalShopDbContext> options, IDateTime dateTime) : base(options)
         {
 
         }
