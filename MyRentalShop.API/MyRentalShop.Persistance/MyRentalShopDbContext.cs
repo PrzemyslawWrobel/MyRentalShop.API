@@ -17,7 +17,10 @@ namespace MyRentalShop.Persistance
     public class MyRentalShopDbContext : DbContext, IMyRentalShopDbContext
     {
         private readonly IDateTime _dateTime;
+        public MyRentalShopDbContext(DbContextOptions<MyRentalShopDbContext> options) : base(options)
+        {
 
+        }
 
         public MyRentalShopDbContext(DbContextOptions<MyRentalShopDbContext> options, IDateTime dateTime) : base(options)
         {
