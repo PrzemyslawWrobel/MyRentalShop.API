@@ -22,15 +22,6 @@ namespace MyRentalShop.Persistance
             _dateTime = dateTime;
         }
 
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<ContactPerson> ContactPersons { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerType> CustomerTypes { get; set; }
-        public DbSet<Item> Items { get; set; }
-        public DbSet<ItemTag> ItemTags { get; set; }
-        public DbSet<ItemType> ItemTypes { get; set; }
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // configuration loaded from folder configuration  
