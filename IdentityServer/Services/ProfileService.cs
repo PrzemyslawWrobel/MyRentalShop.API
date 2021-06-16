@@ -30,9 +30,10 @@ namespace IdentityServer.Services
             context.IssuedClaims.AddRange(claims);
         }
 
-        public Task IsActiveAsync(IsActiveContext context)
+        public async Task IsActiveAsync(IsActiveContext context)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.GetUserAsync(context.Subject);
+            context.IsActive = user != null;
         }
     }
 }
