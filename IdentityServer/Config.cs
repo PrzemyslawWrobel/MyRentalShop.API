@@ -42,6 +42,21 @@ namespace IdentityServer
 
                 }, 
 
+                new Client
+                {
+                    ClientId = "swagger",
+                    ClientName = "Client for Swagger user",
+                    AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
+                    //Podajemy hasło "" a potem szyfrujemy .Sha256()
+                    ClientSecrets = { new Secret("secret".Sha256())},
+                    //Definiujemy jakie resources i scopes będą dostępne przez tego klienta
+                    AllowedScopes = { "api1", "user"},
+                    AlwaysIncludeUserClaimsInIdToken = true,
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris = { "https://localhost:44311/swagger/oauth2-redirect.html" },
+                    AllowedCorsOrigins = {"http://localhost:4200"},
+                }
+
 
                 //// m2m client credentials flow client
                 //new Client
