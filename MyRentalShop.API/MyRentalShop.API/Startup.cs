@@ -47,6 +47,17 @@ namespace MyRentalShop.API
                 )
             );
 
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "http://localhost:5001";
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                    {
+                        ValidateAudience = false // w przysz³oœci zmieniæ na true - walidacja sk¹d przychodzi token
+                    };
+
+
+                });
 
 
             services.AddControllers();
@@ -76,6 +87,7 @@ namespace MyRentalShop.API
                 var filePath = Path.Combine(AppContext.BaseDirectory, "MyRentalShop.API.xml");
                 c.IncludeXmlComments(filePath);
             });
+
 
         }
 
