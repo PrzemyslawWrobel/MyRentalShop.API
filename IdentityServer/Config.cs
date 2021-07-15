@@ -39,6 +39,8 @@ namespace IdentityServer
                     AllowedScopes = { "api1", "user"},
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
+               
+                    
 
                 }, 
 
