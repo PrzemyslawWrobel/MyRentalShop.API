@@ -126,7 +126,7 @@ namespace MyRentalShop.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireAuthorization("ApiScope"); //ca³a aplikacja -> wszystkie kontrolery wymagaj¹ uwierzytlniania i maj¹ odpowiedni claim tu api1
             });
         }
     }
