@@ -127,6 +127,9 @@ namespace MyRentalShop.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
+            
+
             app.UseRouting();
 
             app.UseCors();
