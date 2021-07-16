@@ -1,5 +1,6 @@
 ﻿using IdentityModel;
 using Microsoft.AspNetCore.Http;
+using MyRentalShop.Application.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
