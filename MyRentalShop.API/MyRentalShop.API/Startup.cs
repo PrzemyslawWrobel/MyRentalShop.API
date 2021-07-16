@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyRentalShop.API.Service;
+using MyRentalShop.Application.Common.Interfaces;
 using MyRentalShop.Infrastructure;
 using MyRentalShop.Persistance;
 using System;
@@ -46,6 +50,11 @@ namespace MyRentalShop.API
                     }
                 )
             );
+            //HttpContexxtAccessor dodajemy jeden raz dla ca³ej aplikacji, ¿eby by³ niezmiennny i odp przechowywa³ dane u¿ytkowników, sesji i zapytañ
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            // dodanie wskazania implementacji Current user
+            services.AddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
 
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
