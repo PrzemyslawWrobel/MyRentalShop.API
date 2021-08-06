@@ -59,7 +59,7 @@ namespace MyRentalShop.API
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "http://localhost:5001";
+                    options.Authority = "https://localhost:5001/";
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                     {
                         ValidateAudience = false // w przysz³oœci zmieniæ na true - walidacja sk¹d przychodzi token
@@ -67,13 +67,30 @@ namespace MyRentalShop.API
 
 
                 });
-
+ 
 
             services.AddControllers();
             services.AddInfrastructure(Configuration);
             services.AddPersistance(Configuration);
             services.AddSwaggerGen(c =>
             {
+                c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+                { 
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new OpenApiOAuthFlows()
+                    {
+                        AuthorizationCode = new OpenApiOAuthFlow
+                        {
+                            AuthorizationUrl = new Uri("https://localhost:5001/connect/authorize"),
+                            TokenUrl = new Uri("https://localhost:5001/connect/token"),
+                            Scopes = new Dictionary<string, string>
+                            {
+                                {"api1", "Full access" },
+                                {"user1", "User info" }
+                            }
+                        }
+                    }
+                });
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { 
                     Title = "MyRentalShop.API", 
                     Version = "v1",
@@ -103,6 +120,7 @@ namespace MyRentalShop.API
                 {
                     policy.RequireAuthenticatedUser();
                     policy.RequireClaim("scope", "api1");
+                  
                 });
             });
 
@@ -123,7 +141,14 @@ namespace MyRentalShop.API
 
             app.UseSwagger();
 
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRentalShop.API v1"));
+            app.UseSwaggerUI(c => 
+                {
+
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRentalShop.API v1");
+                    c.OAuthClientId("swagger");
+                    c.OAuth2RedirectUrl("https://localhost:44311/swagger/oauth2-redirect.html");
+                    c.OAuthUsePkce();
+                });
 
             app.UseHttpsRedirection();
 

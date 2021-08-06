@@ -15,14 +15,14 @@ namespace IdentityServer
                    {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource(name: "user", userClaims: new[] {JwtClaimTypes.Email} )
+                new IdentityResource(name: "user1", userClaims: new[] {JwtClaimTypes.Email} )
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
-                new ApiScope("scope1"),
-                new ApiScope("scope2"),
+                new ApiScope("api1"),
+                new ApiScope("user1"),
             };
 
         public static IEnumerable<Client> Clients =>
@@ -36,7 +36,7 @@ namespace IdentityServer
                     //Podajemy hasło "" a potem szyfrujemy .Sha256()
                     ClientSecrets = { new Secret("secret".Sha256())},
                     //Definiujemy jakie resources i scopes będą dostępne przez tego klienta
-                    AllowedScopes = { "api1", "user"},
+                    AllowedScopes = { "api1", "user1"},
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
                
@@ -52,7 +52,7 @@ namespace IdentityServer
                     //Podajemy hasło "" a potem szyfrujemy .Sha256()
                     ClientSecrets = { new Secret("secret".Sha256())},
                     //Definiujemy jakie resources i scopes będą dostępne przez tego klienta
-                    AllowedScopes = { "api1", "user"},
+                    AllowedScopes = { "api1", "user1"},
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris = { "https://localhost:44311/swagger/oauth2-redirect.html" },
