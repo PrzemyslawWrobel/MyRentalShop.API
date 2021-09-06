@@ -86,7 +86,8 @@ namespace MyRentalShop.API
                             Scopes = new Dictionary<string, string>
                             {
                                 {"api1", "Full access" },
-                                {"user1", "User info" }
+                                {"user1", "User info" },
+                                { "openid", "Full "}
                             }
                         }
                     }

@@ -50,6 +50,8 @@ namespace MyRentalShop.Domain.Entities
         /// </summary>
         public string Country { get; set; }
 
+        /*-- RELACJE --*/
+
         //Relacja 1 Customer może mieć wiele adresów. int? oznacza że adres nie jest wymagany
         public int? CustomerId { get; set; }
         //Relacja do Customera 

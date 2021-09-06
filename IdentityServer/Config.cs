@@ -22,7 +22,7 @@ namespace IdentityServer
             new ApiScope[]
             {
                 new ApiScope("api1"),
-                new ApiScope("user1"),
+                new ApiScope("Openid"),
             };
 
         public static IEnumerable<Client> Clients =>
@@ -52,11 +52,11 @@ namespace IdentityServer
                     //Podajemy hasło "" a potem szyfrujemy .Sha256()
                     ClientSecrets = { new Secret("secret".Sha256())},
                     //Definiujemy jakie resources i scopes będą dostępne przez tego klienta
-                    AllowedScopes = { "api1", "user1"},
+                    AllowedScopes = { "api1", "user1", "openid"},
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris = { "https://localhost:44311/swagger/oauth2-redirect.html" },
-                    AllowedCorsOrigins = {"http://localhost:4200"},
+                    AllowedCorsOrigins = {"https://localhost:44311"},
                 }
 
 

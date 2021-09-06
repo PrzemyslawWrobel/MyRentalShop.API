@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyRentalShop.Application.Common.Interfaces;
 using MyRentalShop.Infrastructure.FileStore;
