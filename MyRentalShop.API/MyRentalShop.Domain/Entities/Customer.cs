@@ -68,7 +68,7 @@ namespace MyRentalShop.Domain.Entities
         public CustomerType CustomerType { get; set; }
 
         // Relacja 1 : N relacja jeden Customer wiele adresów
-        public ICollection<Address> Addresses { get; set; }
+        public List<Address> Addresses { get; set; }
         #endregion
     }
 }

@@ -37,6 +37,28 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:MyRentalShop.API.Controllers.ReservationController">
+            <summary>
+            Kontroler odp za obsługę Rezerwacji
+            </summary>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.ReservationController.GetReservationsAsync">
+            <summary>
+            Zwraca listę reserwacji
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MyRentalShop.API.Controllers.TaskController">
+            <summary>
+            Kontroler odp za obsługę zadań
+            </summary>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.TaskController.GetTasksAsync">
+            <summary>
+            Zwraca listę zadań
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:MyRentalShop.API.Controllers.WeatherForecastController.Get">
             <summary>
             Get weather forecast
