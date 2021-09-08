@@ -36,6 +36,9 @@ namespace MyRentalShop.Persistance
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemTag> ItemTags { get; set; }
         public DbSet<ItemType> ItemTypes { get; set; }
+        public DbSet<ContactDetail> ContactDetails { get; set; }
+        public DbSet<ContactDetailType> ContactDetailTypes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
