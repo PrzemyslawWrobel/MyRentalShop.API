@@ -41,9 +41,7 @@ namespace MyRentalShop.Persistance
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ContactPerson>().OwnsOne(p => p.PersonName);
-            // configuration loaded from folder configuration  
+        { 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.SeedData();
         }
