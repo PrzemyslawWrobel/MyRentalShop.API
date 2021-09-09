@@ -59,7 +59,7 @@ namespace MyRentalShop.Domain.Entities
         // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
 
         /// <summary>
-        /// int? ItemTypeId - mówi o tym, że jest to property nie obowiązkowe
+        /// int? CustomertypeId - mówi o tym, że jest to property nie obowiązkowe
         /// </summar>
         public int? CustomerTypeId { get; set; }
         /// <summary>
