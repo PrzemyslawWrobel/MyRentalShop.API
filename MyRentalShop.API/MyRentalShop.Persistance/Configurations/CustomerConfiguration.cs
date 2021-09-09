@@ -14,6 +14,8 @@ namespace MyRentalShop.Persistance.Configurations
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.Property(p => p.Name).HasMaxLength(300).IsRequired();
+            //TODO Konfiguracja dla reszty property Customeer
+
         }
     }
 }

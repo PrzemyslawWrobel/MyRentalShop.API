@@ -13,9 +13,9 @@ namespace MyRentalShop.Persistance.Configurations
     {
         public void Configure(EntityTypeBuilder<ContactPerson> builder)
         {
-            builder.OwnsOne(p => p.PersonName).Property(p => p.FirstName).HasMaxLength(100).IsRequired().HasColumnName("FirstName");
+            builder.OwnsOne(p => p.PersonName).Property(p => p.FirstName).HasMaxLength(100).IsRequired().HasColumnName("FirstName").IsRequired();
             builder.OwnsOne(p => p.PersonName).Property(p => p.SecondName).HasMaxLength(100).HasColumnName("SecondName");
-            builder.OwnsOne(p => p.PersonName).Property(p => p.LastName).HasMaxLength(100).IsRequired().HasColumnName("LastName");
+            builder.OwnsOne(p => p.PersonName).Property(p => p.LastName).HasMaxLength(100).IsRequired().HasColumnName("LastName").IsRequired();
         }
 
     }
