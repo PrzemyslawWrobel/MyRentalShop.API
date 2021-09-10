@@ -19,7 +19,8 @@ namespace MyRentalShop.Application.Common.Interfaces
         DbSet<Item> Items { get; set; }
         DbSet<ItemTag> ItemTags { get; set; }
         DbSet<ItemType> ItemTypes { get; set; }
-
+        DbSet<ContactDetail> ContactDetails { get; set; }
+        DbSet<ContactDetailType> ContactDetailTypes { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
