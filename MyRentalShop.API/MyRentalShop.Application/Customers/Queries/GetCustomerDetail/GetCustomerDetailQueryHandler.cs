@@ -23,7 +23,7 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
             var customer = await _context.Customers.Where(p => p.Id == request.CustomerId).FirstOrDefaultAsync(cancellationToken);
             var customerVm = new GetCustomerDetailVm()
             {
-                FullName = customer.Name.ToString(),
+                FullName = customer.Name,
                 ContactPerson = customer.CustomerContactPerson.ToString(),
                 Address = customer.Addresses.OrderByDescending(p =>p.Country).FirstOrDefault().City
             };
