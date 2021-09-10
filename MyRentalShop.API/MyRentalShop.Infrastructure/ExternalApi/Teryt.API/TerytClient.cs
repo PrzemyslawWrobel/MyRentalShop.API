@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Infrastructure.ExternalApi.Teryt.API
 {
-    class TerytClient
+    public class TerytClient
     {
     }
 }
