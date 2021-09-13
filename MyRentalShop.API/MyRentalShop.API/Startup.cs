@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyRentalShop.API.Service;
+using MyRentalShop.Application;
 using MyRentalShop.Application.Common.Interfaces;
 using MyRentalShop.Infrastructure;
 using MyRentalShop.Persistance;
@@ -67,11 +68,13 @@ namespace MyRentalShop.API
 
 
                 });
- 
 
-            services.AddControllers();
+
+            services.AddApplication();
             services.AddInfrastructure(Configuration);
             services.AddPersistance(Configuration);
+            services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
