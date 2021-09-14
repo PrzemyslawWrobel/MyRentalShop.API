@@ -56,6 +56,8 @@ namespace MyRentalShop.Domain.Entities
         /// </summary>
         public ContactPerson CustomerContactPerson { get; set; }
     
+
+
         // Relacja do ItemType 1 ItemType może mieć w kolekcji wiele Itemów
 
         /// <summary>
