@@ -17,10 +17,10 @@ namespace MyRentalShop.Application.Common.Mappings
 
         private void ApplyMappingFromAssembly(Assembly assembly)
         {
-            var types = assembly.GetExportedTypes()
-                 .Where(t => t.GetInterfaces().Any(i =>
-                 i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
-                 .ToList();
+            var types = assembly.GetExportedTypes().Where(p => 
+                p.GetInterfaces().Any(i =>
+                i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
+                .ToList();
 
             foreach (var type in types)
             {
