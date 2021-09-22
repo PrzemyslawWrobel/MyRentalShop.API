@@ -12,7 +12,7 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
     {
         public string FullName { get; set; }
         public string ContactPerson { get; set; }
-        public string Address { get; set; }
+        //public string Address { get; set; }
 
         public void Mapping(Profile profile)
         {
