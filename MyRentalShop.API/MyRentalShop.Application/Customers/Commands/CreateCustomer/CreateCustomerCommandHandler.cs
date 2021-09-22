@@ -25,28 +25,7 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
                 Name = request.Name,
                 REGON = request.REGON,
                 NIP = request.NIP,
-
-
-
-                //Addresses = new List<Address>
-                //{
-                //    Address = new Address()
-                //    {
-                //        Country = request.,
-                //        City = request.,
-                //        ZipCode = request.,
-                //        Street = request.,
-                //        BuildingNumber = request.,
-                //        FlatNumber = request.,
-
-                //    }
-                //},
-
-                
-                
-               
             };
-
             _context.Customers.Add(customer);
 
             ContactPerson contactPerson = new()
@@ -65,12 +44,12 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
 
             Address address = new()
             {
-                //Country = request.,
-                //        City = request.,
-                //        ZipCode = request.,
-                //        Street = request.,
-                //        BuildingNumber = request.,
-                //        FlatNumber = request.,
+                Country = request.Country,
+                City = request.City,
+                ZipCode = request.ZipCode,
+                Street = request.Street,
+                BuildingNumber = request.BuildingNumber,
+                FlatNumber = request.FlatNumber,
 
             };
             _context.Addresses.Add(address);
