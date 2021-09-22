@@ -13,6 +13,10 @@ namespace MyRentalShop.Infrastructure.ExternalApi.Teryt.API
         public Task<string> GetAdress(string searchFilter, CancellationToken cancellationToken)
         {
             //TODO Zaimplementować metodę do pobierania adresów
+
+            //
+            // dane do logowania po rejestracji do systemu teryt
+
             throw new NotImplementedException();
         }
     }
