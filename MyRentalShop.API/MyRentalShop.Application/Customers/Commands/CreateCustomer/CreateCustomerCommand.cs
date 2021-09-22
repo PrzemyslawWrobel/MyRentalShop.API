@@ -46,5 +46,11 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
         public string ContactSecondFirstName { get; set; }
         public string ContactLastNameFirstName { get; set; }
 
+
+        /// <summary>
+        /// Pozycja jaką zajmuje użytkownik w firmie
+        /// </summary>
+        public string Position { get; set; }
+
     }
 }

@@ -43,21 +43,34 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
                 //},
 
                 
-                CustomerContactPerson = new ContactPerson
-                {
-                    PersonName = new Domain.ValueObjects.PersonName
-                    {
-                        FirstName = request.ContactPersonFirstName,
-                        SecondName = request.ContactSecondFirstName,
-                        LastName = request.ContactLastNameFirstName
-                    }
-                }
+                
+               
             };
 
             _context.Customers.Add(customer);
 
+            ContactPerson contactPerson = new()
+            {
+                PersonName = new Domain.ValueObjects.PersonName
+                {
+                    FirstName = request.ContactPersonFirstName,
+                    SecondName = request.ContactSecondFirstName,
+                    LastName = request.ContactLastNameFirstName,
+
+                },
+                Position = request.Position,
+                CustomerId = customer.Id,
+            };
+            _context.ContactPersons.Add(contactPerson);
+
             Address address = new()
             {
+                //Country = request.,
+                //        City = request.,
+                //        ZipCode = request.,
+                //        Street = request.,
+                //        BuildingNumber = request.,
+                //        FlatNumber = request.,
 
             };
             _context.Addresses.Add(address);
