@@ -50,10 +50,23 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
                 Street = request.Street,
                 BuildingNumber = request.BuildingNumber,
                 FlatNumber = request.FlatNumber,
+                CustomerId = customer.Id
 
             };
             _context.Addresses.Add(address);
 
+            ContactDetail contactDetail = new()
+            {
+                ContactDetailInformation = request.ContactDetailInformation,
+                CustomerId = customer.Id
+            };
+            _context.ContactDetails.Add(contactDetail);
+
+            ContactDetailType contactDetailType = new()
+            {
+                Name = request.ContactDetailTypeName,
+            };
+            _context.ContactDetailTypes.Add(contactDetailType);
             
             await _context.SaveChangesAsync(cancellationToken);
 

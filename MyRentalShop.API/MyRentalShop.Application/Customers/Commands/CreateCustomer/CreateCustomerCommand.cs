@@ -91,7 +91,26 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
         public string Country { get; set; }
         #endregion
 
-        #region Adress
+        #region Contact detail Information
+
+        /// <summary>
+        /// Przechowuje telefony, emil
+        /// </summary>
+        public string ContactDetailInformation { get; set; }
+
+        /// <summary>
+        /// klucz obcy 
+        /// </summary>
+        public int ContactDetailTypeId { get; set; }
+
+        #endregion
+
+        #region Contact detail type
+        /// <summary>
+        /// Przechowuje informacje czy tel, faksu czy adres email są: prywatne, firmowe itp
+        /// </summary>
+        public string ContactDetailTypeName { get; set; }
+
         #endregion
     }
 }
