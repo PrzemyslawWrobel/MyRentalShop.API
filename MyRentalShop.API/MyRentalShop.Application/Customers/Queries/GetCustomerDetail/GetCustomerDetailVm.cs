@@ -64,10 +64,10 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
         /// </summary>
         public string FullAddress { get; set; }
 
-        /// <summary>
-        /// Jaki adres domowy, do korespondencji, zamieszkanaia, wykonywania działalności
-        /// </summary>
-        public string AddressType { get; set; }
+        ///// <summary>
+        ///// Jaki adres domowy, do korespondencji, zamieszkanaia, wykonywania działalności
+        ///// </summary>
+        //public string AddressType { get; set; }
 
         #endregion
 
@@ -100,11 +100,29 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
                 .ForMember(d => d.IsActiv, map => map.MapFrom(src => src.IsActiv))
                 .ForMember(d => d.ContactPersonName, map => map.MapFrom(src => src.CustomerContactPerson.PersonName.ToString()))
                 .ForMember(d => d.Position, map => map.MapFrom(src => src.CustomerContactPerson.Position))
-                .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)))
-                .ForMember(d => d.AddressType, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.AddressType)))
+                .ForMember(d => d.FullAddress, map => map.MapFrom<AdressesResolver>())//(src => src.Addresses.OrderByDescending(p => p.City)))
+                //.ForMember(d => d.AddressType, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.AddressType)))
                 .ForMember(d => d.ContactDetailTypeName, map => map.MapFrom(src => src.ContactDetails.OrderByDescending(p => p.ContactDetailInformation)))
                 .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)));
 
+        }
+
+        // Resolver służy do sprawdzenia czy obiekty nie są nulami
+
+        /// <summary>
+        /// Spr czy obiekt nie jest null lub pusty
+        /// </summary>
+        private class AdressesResolver : IValueResolver<Customer, object, string>
+        {
+            public string Resolve(Customer source, object destination, string destMember, ResolutionContext context)
+            {
+                if (source.Addresses is not null && source.Addresses.Any())
+                {
+                    var address = source.Addresses.OrderByDescending(p => p.City).FirstOrDefault();
+                    return address.City;
+                }
+                return string.Empty;
+            }
         }
     }
 }
