@@ -103,7 +103,8 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
                 .ForMember(d => d.FullAddress, map => map.MapFrom<AdressesResolver>())//(src => src.Addresses.OrderByDescending(p => p.City)))
                 //.ForMember(d => d.AddressType, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.AddressType)))
                 .ForMember(d => d.ContactDetailTypeName, map => map.MapFrom(src => src.ContactDetails.OrderByDescending(p => p.ContactDetailInformation)))
-                .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)));
+                .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)))
+                .ForAllOtherMembers(d => d.Ignore());
 
         }
 
