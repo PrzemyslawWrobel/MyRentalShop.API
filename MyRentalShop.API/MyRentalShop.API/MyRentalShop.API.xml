@@ -4,14 +4,20 @@
         <name>MyRentalShop.API</name>
     </assembly>
     <members>
-        <member name="T:MyRentalShop.API.Controllers.CustomerController">
+        <member name="T:MyRentalShop.API.Controllers.CustomersController">
             <summary>
             Kontroler odp za obsługę użytkowników
             </summary>
         </member>
-        <member name="M:MyRentalShop.API.Controllers.CustomerController.GetCustomersAsync">
+        <member name="M:MyRentalShop.API.Controllers.CustomersController.GetCustomersAsync">
             <summary>
             Zwraca listę użytkowników
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyRentalShop.API.Controllers.CustomersController.GetCustomerDetails(System.Int32)">
+            <summary>
+            Zwraca użytkownika po id
             </summary>
             <returns></returns>
         </member>
