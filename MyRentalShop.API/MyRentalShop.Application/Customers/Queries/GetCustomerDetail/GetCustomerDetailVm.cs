@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MyRentalShop.Application.Common.Mappings;
 using MyRentalShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
 {
-    public class GetCustomerDetailVm
+    public class GetCustomerDetailVm : IMapFrom<Customer>
     {
         /// <summary>
         /// Nazwa użytkownika
@@ -59,14 +60,15 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
         #region Adress
 
         /// <summary>
+        /// Nazwa ulicy
+        /// </summary>
+        public string FullAddress { get; set; }
+
+        /// <summary>
         /// Jaki adres domowy, do korespondencji, zamieszkanaia, wykonywania działalności
         /// </summary>
         public string AddressType { get; set; }
 
-        /// <summary>
-        /// Nazwa ulicy
-        /// </summary>
-        public string FullAddress { get; set; }
         #endregion
 
         #region Contact detail Information
@@ -90,8 +92,18 @@ namespace MyRentalShop.Application.Customers.Queries.GetCustomerDetail
         {
             profile.CreateMap<Customer, GetCustomerDetailVm>()
                 .ForMember(d => d.CustomerName, map => map.MapFrom(src => src.Name))
-                .ForMember(d => d.ContactPersonName, map => map.MapFrom(src => src.CustomerContactPerson.PersonName.ToString()));
-                //.ForMember(d => d.Address, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.)))
+                .ForMember(d => d.RegistrationDate, map => map.MapFrom(src => src.RegistrationDate))
+                .ForMember(d => d.AgeCustomer, map => map.MapFrom(src => src.AgeCustomer))
+                .ForMember(d => d.CustomerStatusId, map => map.MapFrom(src => src.CustomerStatusId))
+                .ForMember(d => d.NIP, map => map.MapFrom(src => src.NIP))
+                .ForMember(d => d.REGON, map => map.MapFrom(src => src.REGON))
+                .ForMember(d => d.IsActiv, map => map.MapFrom(src => src.IsActiv))
+                .ForMember(d => d.ContactPersonName, map => map.MapFrom(src => src.CustomerContactPerson.PersonName.ToString()))
+                .ForMember(d => d.Position, map => map.MapFrom(src => src.CustomerContactPerson.Position))
+                .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)))
+                .ForMember(d => d.AddressType, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.AddressType)))
+                .ForMember(d => d.ContactDetailTypeName, map => map.MapFrom(src => src.ContactDetails.OrderByDescending(p => p.ContactDetailInformation)))
+                .ForMember(d => d.FullAddress, map => map.MapFrom(src => src.Addresses.OrderByDescending(p => p.City)));
 
         }
     }

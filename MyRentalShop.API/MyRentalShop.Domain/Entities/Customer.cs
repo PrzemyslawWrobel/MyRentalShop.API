@@ -71,6 +71,8 @@ namespace MyRentalShop.Domain.Entities
 
         // Relacja 1 : N relacja jeden Customer wiele adresów
         public List<Address> Addresses { get; set; }
+
+        public List<ContactDetail> ContactDetails { get; set; }
         #endregion
     }
 }
