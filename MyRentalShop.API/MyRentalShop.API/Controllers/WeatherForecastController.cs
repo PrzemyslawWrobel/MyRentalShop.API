@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +10,14 @@ using System.Linq;
 
 namespace MyRentalShop.API.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+
+    /// <summary>
+    /// testowy kontroler
+    /// </summary>
+    [Route("api/weatherForecast")]
+    [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : BaseController
     {
         private static readonly string[] Summaries = new[]
         {
