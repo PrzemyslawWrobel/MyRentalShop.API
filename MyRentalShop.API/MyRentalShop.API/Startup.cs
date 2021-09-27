@@ -60,10 +60,10 @@ namespace MyRentalShop.API
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "https://localhost:5001/";
+                    options.Authority = "https://localhost:5001/"; //adres sk¹d bêd¹ pobierane dane do uwierzytelnienia
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                     {
-                        ValidateAudience = false // w przysz³oœci zmieniæ na true - walidacja sk¹d przychodzi token
+                        ValidateAudience = false // w przysz³oœci zmieniæ na true - walidacja sk¹d przychodzi token - zabezpiecza przed podszywaniem siê
                     };
 
 
