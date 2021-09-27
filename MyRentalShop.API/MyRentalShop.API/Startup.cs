@@ -151,7 +151,7 @@ namespace MyRentalShop.API
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRentalShop.API v1");
                     c.OAuthClientId("swagger");
                     c.OAuth2RedirectUrl("https://localhost:44311/swagger/oauth2-redirect.html");
-                    c.OAuthUsePkce();
+                    c.OAuthUsePkce(); // mechanizm do rozpoznawania czy token by³ u¿ywany przez inne aplikacje
                 });
 
             app.UseHttpsRedirection();
