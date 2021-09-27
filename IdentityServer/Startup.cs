@@ -74,7 +74,7 @@ namespace IdentityServer
                 ;
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app) 
         {
             if (Environment.IsDevelopment())
             {
