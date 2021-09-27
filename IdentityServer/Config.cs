@@ -21,7 +21,7 @@ namespace IdentityServer
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
-                new ApiScope("api1"),
+                new ApiScope("api1"),  
                 new ApiScope("Openid"),
             };
 
