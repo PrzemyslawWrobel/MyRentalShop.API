@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,10 @@ namespace MyRentalShop.API.Controllers
     /// Kontroler odp za obsługę produktów
     /// </summary>
     [Route("api/[controller]")]
-    [ApiController]
+    [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
 
-    public class ItemController : ControllerBase
+    public class ItemController : BaseController
     {
         /// <summary>
         /// Zwraca listę produktów
