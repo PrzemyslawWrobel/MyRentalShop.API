@@ -95,6 +95,7 @@ namespace MyRentalShop.API
                         }
                     }
                 });
+                c.OperationFilter<AuthorizeCheckOperationFilter>();
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { 
                     Title = "MyRentalShop.API", 
                     Version = "v1",
