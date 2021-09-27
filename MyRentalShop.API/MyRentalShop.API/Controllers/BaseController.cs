@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MyRentalShop.API.Controllers
 {
+    /// <summary>
+    /// Kontroler bazowy po którym będą dziedziczyły wszystkie kontrolery
+    /// </summary>
     [ApiController]
     [Authorize]
     public class BaseController : ControllerBase
