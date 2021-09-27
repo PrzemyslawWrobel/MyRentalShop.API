@@ -39,9 +39,6 @@ namespace IdentityServer
                     AllowedScopes = { "api1", "user1"},
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
-               
-                    
-
                 }, 
 
                 new Client

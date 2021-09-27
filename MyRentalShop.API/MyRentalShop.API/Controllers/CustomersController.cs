@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,7 @@ namespace MyRentalShop.API.Controllers
     /// Kontroler odp za obsługę użytkowników
     /// </summary>
     [Route("api/customers")]
+    [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
 
     public class CustomersController : BaseController
