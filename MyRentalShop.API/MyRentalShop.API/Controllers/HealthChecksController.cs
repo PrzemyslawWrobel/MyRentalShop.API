@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Internal;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,9 @@ namespace MyRentalShop.API.Controllers
     /// Służy do spr czy api działa
     /// </summary>
     [Route("api/hc")]
-    [ApiController]
+    [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
-    public class HealthChecksController : ControllerBase
+    public class HealthChecksController : BaseController
     {
         /// <summary>
         /// Test
