@@ -13,7 +13,7 @@ namespace MyRentalShop.API.Controllers
     /// <summary>
     /// Kontroler odp za obsługę produktów
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/item")]
     [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
 
