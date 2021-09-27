@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,10 +12,10 @@ namespace MyRentalShop.API.Controllers
     /// <summary>
     /// Kontroler odp za obsługę Rezerwacji
     /// </summary>
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/reservation")]
+    [Authorize]
     [EnableCors("MyAllowAngularOrigins")]
-    public class ReservationController : Controller
+    public class ReservationController : BaseController
     {
       
         /// <summary>
