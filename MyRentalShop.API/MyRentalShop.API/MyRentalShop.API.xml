@@ -4,6 +4,11 @@
         <name>MyRentalShop.API</name>
     </assembly>
     <members>
+        <member name="T:MyRentalShop.API.Controllers.BaseController">
+            <summary>
+            Kontroler bazowy po którym będą dziedziczyły wszystkie kontrolery
+            </summary>
+        </member>
         <member name="T:MyRentalShop.API.Controllers.CustomersController">
             <summary>
             Kontroler odp za obsługę użytkowników
@@ -64,6 +69,11 @@
             Zwraca listę zadań
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:MyRentalShop.API.Controllers.WeatherForecastController">
+            <summary>
+            testowy kontroler
+            </summary>
         </member>
         <member name="M:MyRentalShop.API.Controllers.WeatherForecastController.Get">
             <summary>
