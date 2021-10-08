@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyRentalShop.Application.Common.Behaviours
 {
-    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TResponse, TResponse>
+    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
         public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators)
@@ -17,15 +17,15 @@ namespace MyRentalShop.Application.Common.Behaviours
             _validators = validators;
         }
 
-        public async Task<TResponse> Handle(TResponse request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            if(_validators.Any())
+            if (_validators.Any())
             {
                 var context = new ValidationContext<TRequest>(request);
 
                 var failures = _validators.Select(v => v.Validate(context)).SelectMany(result => result.Errors).Where(f => f != null).ToList();
 
-                if(failures.Count !=0)
+                if (failures.Count != 0)
                 {
                     throw new Exception();
                 }

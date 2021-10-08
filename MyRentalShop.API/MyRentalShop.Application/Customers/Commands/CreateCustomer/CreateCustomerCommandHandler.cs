@@ -33,8 +33,8 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
                 PersonName = new Domain.ValueObjects.PersonName
                 {
                     FirstName = request.ContactPersonFirstName,
-                    SecondName = request.ContactSecondFirstName,
-                    LastName = request.ContactLastNameFirstName,
+                    SecondName = request.ContactPersonSecondName,
+                    LastName = request.ContactPersonLastName,
 
                 },
                 Position = request.Position,
