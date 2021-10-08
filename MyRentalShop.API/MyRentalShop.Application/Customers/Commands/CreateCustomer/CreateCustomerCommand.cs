@@ -43,8 +43,8 @@ namespace MyRentalShop.Application.Customers.Commands.CreateCustomer
 
    
         public string ContactPersonFirstName  { get; set; }
-        public string ContactSecondFirstName { get; set; }
-        public string ContactLastNameFirstName { get; set; }
+        public string ContactPersonSecond { get; set; }
+        public string ContactPersonLastName { get; set; }
 
 
         /// <summary>
