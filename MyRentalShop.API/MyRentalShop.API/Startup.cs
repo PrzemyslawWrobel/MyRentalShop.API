@@ -14,6 +14,7 @@ using MyRentalShop.Application;
 using MyRentalShop.Application.Common.Interfaces;
 using MyRentalShop.Infrastructure;
 using MyRentalShop.Persistance;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -143,7 +144,7 @@ namespace MyRentalShop.API
                 app.UseDeveloperExceptionPage();
                 
             }
-
+            app.UseSerilogRequestLogging();
             app.UseSwagger();
 
             app.UseSwaggerUI(c => 
