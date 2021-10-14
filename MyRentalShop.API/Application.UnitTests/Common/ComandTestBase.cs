@@ -1,4 +1,5 @@
-﻿using MyRentalShop.Persistance;
+﻿using Moq;
+using MyRentalShop.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace Application.UnitTests.Common
 {
     public class ComandTestBase : IDisposable // Po teście bedzie niszczony obiekt bazy danych
     {
-        protected readonly MyRentalShopDbContext
+        protected readonly MyRentalShopDbContext _context;
+        protected readonly Mock<MyRentalShopDbContext> _contextMock;
+
         public ComandTestBase()
         {
-
+            _contextMock = MyRentalShopDbContextFactory;
         }
         public void Dispose()
         {
