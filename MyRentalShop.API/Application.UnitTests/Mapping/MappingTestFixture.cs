@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using MyRentalShop.Application.Common.Mappings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,15 @@ namespace Application.UnitTests.Mapping
 {
     public class MappingTestFixture
     {
+        public MappingTestFixture()
+        {
+            ConfigurationProvider = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<MappingProfile>();
+            })
+
+        }
+        public IConfigurationProvider ConfigurationProvider { get; set; }
+        public IMapper Mapper { get; set; }
     }
 }
