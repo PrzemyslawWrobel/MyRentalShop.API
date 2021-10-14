@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyRentalShop.Application\MyRentalShop.Application.csproj" />
+    <ProjectReference Include="..\MyRentalShop.Persistance\MyRentalShop.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
