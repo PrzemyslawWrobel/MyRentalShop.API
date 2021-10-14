@@ -15,11 +15,12 @@ namespace Application.UnitTests.Common
 
         public ComandTestBase()
         {
-            _contextMock = MyRentalShopDbContextFactory;
+            _contextMock = MyRentalShopDbContextFactory.Create();
+            _context = _contextMock.Object;
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            MyRentalShopDbContextFactory.Destroy(_context);
         }
     }
 }
